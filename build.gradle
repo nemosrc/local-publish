@@ -1,0 +1,43 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'com.gradle.plugin-publish' version '0.10.0'
+}
+
+group 'com.nemosw'
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile localGroovy()
+    compile gradleApi()
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+gradlePlugin {
+    plugins {
+        spigotPublish {
+            id = 'com.nemosw.local-publish'
+            implementationClass = 'com.nemosw.localpublish.LocalPublishPlugin'
+        }
+    }
+}
+
+pluginBundle {
+    website = 'https://github.com/nemosrc'
+
+    plugins {
+        spigotPublish {
+            vcsUrl = 'https://github.com/nemosrc/local-publish'
+            displayName = 'local-publish'
+            description = 'Simple plugin for publish to local (depend maven-publish)'
+            tags = ['publish', 'maven-publish', 'local-publish']
+        }
+    }
+}
