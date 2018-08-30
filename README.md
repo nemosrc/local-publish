@@ -1,7 +1,5 @@
 # Gradle local-publish
-It's simple to make public in Local maven repository. <br/>
-프로젝트를 로컬 메이븐 저장소에 공개하는 테스크를 작성하는 플러그인입니다.<br/>
-(내부적으로 maven-publish 플러그인을 사용합니다.)
+It's simple to make publish in Local maven repository. <br/>
 
 ## build.gradle
 ```gradle
